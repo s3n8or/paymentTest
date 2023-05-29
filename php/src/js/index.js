@@ -15,8 +15,6 @@ $(document).ready(function() {
     const $signupTitle = $('#signupTitle')
 
     updateUI()
-    // Hides the signup section so we start with the sign in form
-    $loginGroupButton.click()
 
     $loginGroupButton.on('click', function(event) {
         $signupGroupButton.prop('disabled', false)
@@ -27,6 +25,9 @@ $(document).ready(function() {
         $signupSection.hide()
         $signupTitle.hide()
     })
+
+    // Hides the signup section so we start with the sign in form
+    $loginGroupButton.click()
 
     $signupGroupButton.on('click', function(event) {
         $loginGroupButton.prop('disabled', false)
@@ -84,7 +85,7 @@ $(document).ready(function() {
                 $rePasswordSignUpField.val('') 
 
                 updateUI()
-                $signupSection.hide()
+                $loginGroupButton.click()
                 $closeOffcanvasButton.click()
             })
             .fail(function(error) {
