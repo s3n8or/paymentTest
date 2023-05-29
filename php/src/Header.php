@@ -36,6 +36,8 @@ class Header {
                 return '201 Created';
             case 203:
                 return '203 Non-Authoritative Information';
+            case 400:
+                return '400 Bad Request';
             case 401:
                 return '401 Unauthorized';
             case 404:

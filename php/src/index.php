@@ -100,12 +100,28 @@ WHERE s.sessionId = '{$sessionId}'";
             </div> <!-- END login section -->
             <!-- BEGIN signup section -->
             <div id="signupSection">
-                <p>user name</p>
-                <p>email address</p>
-                <p>password</p>
-                <p>re-enter password</p>
+                <form id="signUpForm" action="signup.php">
+                    <div class="form-floating mb-3 mt-3">
+                        <input id="usernameSignup" class="form-control" type="text" name="usernameSignup" placeholder="Enter username">
+                        <label class="form-label" for="usernameSignup">Username</label>
+                    </div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input id="emailSignUp" class="form-control" type="text" name="emailSignUp" placeholder="Enter email">
+                        <label class="form-label" for="emailSignUp">Email</label>
+                    </div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input id="passwordSignUp" class="form-control" type="password" name="passwordSignUp" placeholder="Enter password">
+                        <label class="form-label" for="passwordSignUp">Password</label>
+                    </div>
+                    <div class="form-floating mb-3 mt-3">
+                        <input id="rePasswordSignUp" class="form-control" type="password" name="rePasswordSignUp" placeholder="Re-enter password">
+                        <label class="form-label" for="rePasswordSignUp">Re-enter Password</label>
+                    </div>
+                    <button id="signupFormButton" class="btn btn-primary" type="submit">Sign up</button>
+                </form>
             </div> <!-- END signup section -->
         </div>
+        <div id="errorList"></div>
     </div>
     <!-- END login/signup offcanvas -->
 
