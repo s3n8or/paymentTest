@@ -11,23 +11,31 @@ $(document).ready(function() {
     const $bannerMessage = $('#bannerMessage')
     const $closeOffcanvasButton = $('#closeOffcanvasButton')
     const $errorList = $('#errorList')
+    const $loginTitle = $('#loginTitle')
+    const $signupTitle = $('#signupTitle')
 
     updateUI()
     // Hides the signup section so we start with the sign in form
-    $signupSection.hide()
+    $loginGroupButton.click()
 
     $loginGroupButton.on('click', function(event) {
         $signupGroupButton.prop('disabled', false)
         $(this).prop('disabled', true)
+
         $loginSection.show()
+        $loginTitle.show()
         $signupSection.hide()
+        $signupTitle.hide()
     })
 
     $signupGroupButton.on('click', function(event) {
         $loginGroupButton.prop('disabled', false)
         $(this).prop('disabled', true)
-        $signupSection.show()
+
         $loginSection.hide()
+        $loginTitle.hide()
+        $signupSection.show()
+        $signupTitle.show()
     })
 
     $signUpForm.on('submit', function(event) {

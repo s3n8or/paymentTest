@@ -8,7 +8,6 @@
  * @return string The salt that was embedded in the password
  */
 function getSaltFromHash(string $hash): string {
-    // return substr($hash, -16);
     return substr($hash, -16);
 }
 
@@ -31,8 +30,6 @@ function createHash(string $password, string $salt): string {
  * 
  * @return string
  */
-// function createSalt(int $length): string {
-//     $salt = openssl_random_pseudo_bytes($length / 2);
 function createSalt(): string {
     // Ideally this would be in a class where we'd have a const value of 16, I hard coded it so others would know where this number comes from
     $salt = openssl_random_pseudo_bytes(16 / 2);

@@ -24,8 +24,6 @@ try {
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-// $email = 'jon@jontrent.net';
-// $password = 'whattheheckman';
 
 // look up user
 $stmt = $mysqli->prepare('SELECT id, username, password FROM users WHERE email = ?');
@@ -102,22 +100,5 @@ setcookie('sessionId', $sessionId, time() + 300, '/');
 
 // return username
 echo json_encode(['username' => $username]);
-
-
-/**
- * 
- */
-function getUsers(mysqli $mysqli): array {
-    $sql = 'SELECT * FROM users';
-    $users = [];
-
-    if ($result = $mysqli->query($sql)) {
-        while ($data = $result->fetch_object()) {
-            $users[] = $data;
-        }
-    }
-
-    return $users;
-}
 
 ?>

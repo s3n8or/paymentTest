@@ -41,29 +41,10 @@ WHERE s.sessionId = '{$sessionId}'";
     <title>Welcome!</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/index.js"></script>
-
-    <style>
-        :root {
-            --dark-blue-color: #123456;
-            --light-blue-color: #CCFFFF;
-        }
-        .bg-dark-blue {
-            background: var(--dark-blue-color);
-        }
-        .text-dark-blue {
-            color: var(--dark-blue-color);
-        }
-        .text-light-blue {
-            /* color: #EBF4FA; */
-            color: var(--light-blue-color);
-        }
-        .btn-selected {
-            opacity: 0.8;
-        }
-    </style>
 
     <script>
         let isLoggedIn = <?php echo $isLoggedIn ? 'true' : 'false' . "\n"; ?> 
@@ -75,7 +56,8 @@ WHERE s.sessionId = '{$sessionId}'";
     <!-- BEGIN login/signup offcanvas -->
     <div id="sidebar" class="offcanvas offcanvas-start">
         <div class="offcanvas-header">
-            <h1 class="offcanvas-title">Log in</h1> <!-- or sign in -->
+            <h1 id="loginTitle" class="offcanvas-title">Log in</h1>
+            <h1 id="signupTitle" class="offcanvas-title" style="display: none;">Sign up</h1>
             <button id="closeOffcanvasButton" type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
@@ -140,11 +122,4 @@ WHERE s.sessionId = '{$sessionId}'";
     </div>
 </body>
 </html>
-
-
-<!-- loading button diabled:
-<button class="btn btn-primary" disabled>
-    <span class="spinner-border spinner-border-sm"></span>
-    Loading..
-  </button> -->
   

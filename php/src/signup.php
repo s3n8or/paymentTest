@@ -35,9 +35,6 @@ if (!($_POST['username'] && $_POST['email'] && $_POST['password'])) {
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-// $username = 'benny';
-// $email = 'benny@imhotep.eg';
-// $password = 'ricksucks';
 
 // Check if user already exists
 $stmt = $mysqli->prepare('SELECT id FROM users WHERE email = ?');

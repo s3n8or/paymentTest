@@ -1,0 +1,20 @@
+:root {
+    --dark-blue-color: #123456;
+    --light-blue-color: #CCFFFF;
+}
+
+.bg-dark-blue {
+    background: var(--dark-blue-color);
+}
+
+.text-dark-blue {
+    color: var(--dark-blue-color);
+}
+
+.text-light-blue {
+    color: var(--light-blue-color);
+}
+
+.btn-selected {
+    opacity: 0.8;
+}
