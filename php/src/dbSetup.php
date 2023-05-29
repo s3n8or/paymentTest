@@ -25,7 +25,7 @@ function setupUsersTable(mysqli $mysqli) {
     $sql = 'DESCRIBE users';
 
     if ($mysqli->query($sql)) {
-        echo 'users already exists';
+        echo 'users already exists<br>';
         return;
     }
 
@@ -40,9 +40,9 @@ CREATE TABLE users (
 SQL;
 
     if ($mysqli->query($sql) === true) {
-        echo 'users successfully created';
+        echo 'users successfully created<br>';
     } else {
-        echo 'Error creating users: ' . $mysqli->error;
+        echo 'Error creating users: ' . $mysqli->error . '<br>';
     }
 }
 
@@ -56,7 +56,7 @@ function setupSessionsTable(mysqli $mysqli) {
     $sql = 'DESCRIBE sessions';
 
     if ($mysqli->query($sql)) {
-        echo 'sessions already exists';
+        echo 'sessions already exists<br>';
         return;
     }
 
@@ -69,14 +69,12 @@ CREATE TABLE sessions (
     UNIQUE(userId),
     FOREIGN KEY(userId) REFERENCES users(id)
 );
-
-CREATE INDEX IDX_userId on sessions(userId);
 SQL;
 
     if ($mysqli->query($sql) === true) {
-        echo 'sessions successfully created';
+        echo 'sessions successfully created<br>';
     } else {
-        echo 'Error creating sessions: ' . $mysqli->error;
+        echo 'Error creating sessions: ' . $mysqli->error . '<br>';
     }
 }
 
